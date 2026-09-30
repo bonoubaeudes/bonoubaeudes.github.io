@@ -1,4 +1,9 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Bienvenu Bonou, machine learning researcher working on trustworthy and interpretable AI.">
 <title>Bienvenu Bonou</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -134,6 +139,10 @@ footer { margin-top: 72px; padding-top: 14px; border-top: 1px solid var(--line);
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
+<style>[hidden]{display:none!important} body{margin:0} img{max-width:100%}</style>
+</head>
+<body>
+
 
 <header class="bar">
   <div class="wrap">
@@ -150,8 +159,11 @@ footer { margin-top: 72px; padding-top: 14px; border-top: 1px solid var(--line);
 <div class="wrap" id="top">
   <div class="hero">
     <figure class="photo">
-      <!-- Replace this placeholder with: <img src="photo.jpg" alt="Bienvenu Bonou"> -->
-      <img src="Bonou_professional_photo.png" alt="Bienvenu Bonou">
+      <img src="identity.png" alt="Bienvenu Bonou" onerror="this.remove(); document.getElementById('ph').hidden = false;">
+      <div class="ph" id="ph" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.4 3.6-7.5 8-7.5s8 3.1 8 7.5"/></svg>
+        <span>Add identity.png</span>
+      </div>
     </figure>
     <div class="intro">
       <h1>Bienvenu Bonou</h1>
@@ -179,7 +191,7 @@ footer { margin-top: 72px; padding-top: 14px; border-top: 1px solid var(--line);
     <section aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
       <div class="body">
-        <p>I am a machine learning researcher and AIMS-H2i Data Science Fellow in AIMS Rwanda, working with Grow Kinesis in partnership with the University of Toronto. I hold a Master's in Applied Mathematics from AIMS Senegal, where I was a Mastercard Foundation Scholar.</p>
+        <p>I am a machine learning researcher and AIMS-H2i Data Science Fellow in Rwanda, working with Grow Kinesis in partnership with the University of Toronto. I hold a Master's in Applied Mathematics from AIMS Senegal, where I was a Mastercard Foundation Scholar.</p>
         <p>My research is about trustworthy deep learning: models that can be checked, know when they are unsure, and are efficient enough to deploy.</p>
       </div>
     </section>
@@ -194,7 +206,6 @@ footer { margin-top: 72px; padding-top: 14px; border-top: 1px solid var(--line);
           <li><span class="d">Jul 2026</span><span>Awarded the Prairie Scholarship, Université Paris Dauphine.</span></li>
           <li><span class="d">Feb 2026</span><span>Gave an oral presentation at the Max Planck Institute for Intelligent Systems / University of Tübingen.</span></li>
           <li><span class="d">Apr 2025</span><span>Won the AirAware Hackathon (Imperial College London / AIMS).</span></li>
-        
         </ul>
       </div>
     </section>
@@ -299,4 +310,5 @@ document.getElementById("copy-email").addEventListener("click", () => {
 });
 </script>
 
-</body></html>
+</body>
+</html>
