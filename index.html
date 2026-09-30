@@ -1,47 +1,302 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Bonou Bienvenu </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex bg-white text-black">
-    <!-- Navigation latérale -->
-    <aside class="w-64 bg-black text-white p-6 fixed h-full">
-        <h1 class="text-2xl font-bold mb-8">Bonou Bienvenu Aimé Eudes</h1>
-        <nav>
-            <ul class="space-y-4">
-                <li><a href="#home" class="hover:underline">Home</a></li>
-                <li><a href="#projects" class="hover:underline">Projects</a></li>
-                <li><a href="#honors" class="hover:underline">Honors</a></li>
-                <li><a href="#publications" class="hover:underline">Publications</a></li>
-                <li><a href="#contact" class="hover:underline">Contact</a></li>
-                <li><a href="#others" class="hover:underline">Others</a></li>
-            </ul>
-        </nav>
-        <div class="mt-12 flex space-x-4">
-            <a href="https://linkedin.com" target="_blank"><img src="linkedin.jpg" alt="LinkedIn" class="hover:opacity-80"></a>
-            <a href="https://github.com" target="_blank"><img src="github.png" alt="GitHub" class="hover:opacity-80"></a>
-            <a href="https://researchgate.net" target="_blank"><img src="https://via.placeholder.com/24" alt="ResearchGate" class="hover:opacity-80"></a>
-        </div>
-    </aside>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Bienvenu Bonou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=DM+Mono:wght@400&display=swap">
+<style>
+/* Layout: a simple black-and-white academic homepage. Photo + name at the top,
+   then plain sections with a heading column on the left. */
+:root {
+  /* Always white background with black text, whatever the viewer's theme */
+  --bg: #FFFFFF;
+  --ink: #111111;
+  --muted: #666666;
+  --line: #E6E6E6;
+  --soft: #F2F2F2;
+  --f-head: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Literata", Georgia, serif;
+  --f-mono: "DM Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
 
-    <!-- Contenu principal -->
-    <main class="ml-64 p-8">
-        <div class="flex items-start">
-            <img src="identity.png" alt="Profile Picture" class="w-48 h-48 object-cover mr-8">
-            <div>
-                <p class="text-lg mb-4">Hi, I am an applied Machine Learning researcher focused on developing and prototyping cutting-edge algorithms for medical imaging and healthcare applications.</p>
-                <p class="mb-4">I am currently a Master’s student in Applied Mathematics at AIMS Senegal, specializing in Probabilities, Statistics, and Machine Learning, with a particular interest in 
-                    reinforcement learning, deep learning, and graph neural networks. My research focuses on applying advanced AI techniques to medical imaging, including brain tumor classification 
-                    from MRI data.</p>
-                <h2 class="text-xl font-semibold mt-6">Research</h2>
-                <p class="mb-4">Previously, I received my Bachelor’s degree in Mathematics from [indique ton université de Bachelor] and gained professional experience in [optionnel : ton expérience professionnelle si tu veux l’inclure].</p>
-                <p class="mb-4">More information about my work can be found on the <a href="#projects" class="text-blue-600 hover:underline">Projects</a> page. My resume is available <a href="#" class="text-blue-600 hover:underline">here</a>.</p>
-                <p class="mb-4">Overall, my research expertise lies in Deep Learning, Computer Vision, and Medical Image Analysis, including segmentation, uncertainty, semi-supervised learning, weakly-supervised learning, representation learning, interpretability, calibration, image retrieval, image enhancement, generative adversarial network, generative AI, and geometric deep learning.</p>
-            </div>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 1.05rem; line-height: 1.65;
+  padding-inline: 20px; padding-block: 0 56px;
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: var(--ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--f-head); margin: 0; line-height: 1.15; text-wrap: balance; }
+p { margin: 0; }
+.label { font-family: var(--f-mono); font-size: 0.8rem; letter-spacing: 0.02em; color: var(--muted); }
+
+/* Top bar */
+.bar { border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; padding-block: 16px; }
+.bar .name { font-family: var(--f-head); font-weight: 700; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 0.98rem; }
+.bar nav a { color: var(--muted); text-decoration: none; }
+.bar nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 48px 8px; }
+.intro { display: grid; gap: 14px; min-width: 0; }
+.intro h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 700; letter-spacing: -0.03em; }
+.intro .full { color: var(--muted); font-size: 0.95rem; margin-top: -6px; }
+.intro .role { font-family: var(--f-mono); font-size: 0.9rem; }
+.intro .say { font-size: 1.15rem; max-width: 46ch; }
+.links { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.98rem; margin-top: 4px; }
+
+.photo {
+  margin: 0; width: 100%; max-width: 240px; aspect-ratio: 4 / 5;
+  border: 1px solid var(--ink); background: var(--soft);
+  display: grid; place-items: center; overflow: hidden;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo .ph { display: grid; justify-items: center; gap: 10px; color: var(--muted); font-family: var(--f-mono); font-size: 0.8rem; text-align: center; padding: 16px; }
+.photo .ph svg { width: 56px; height: 56px; }
+
+.interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 40px; padding-block: 16px; border-block: 1px solid var(--line); }
+.interests span { font-family: var(--f-mono); font-size: 0.82rem; border: 1px solid var(--ink); padding: 3px 10px; border-radius: 999px; }
+
+/* Sections */
+main { display: grid; gap: 60px; padding-top: 60px; }
+section { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 28px; scroll-margin-top: 20px; }
+section > h2 { font-size: 1.3rem; font-weight: 700; padding-top: 2px; }
+.body { display: grid; gap: 16px; min-width: 0; max-width: 70ch; }
+
+/* Publications */
+.pub { display: grid; gap: 4px; }
+#publications .body { gap: 28px; }
+.pub .t { font-weight: 600; line-height: 1.4; }
+.pub .au { color: var(--muted); font-size: 0.96rem; }
+.pub .au .me { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.acts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-top: 6px; font-family: var(--f-mono); font-size: 0.8rem; }
+.acts button { color: var(--ink); background: none; border: 0; padding: 0; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.badge { background: var(--ink); color: var(--bg); padding: 2px 8px; border-radius: 3px; }
+.badge.out { background: none; color: var(--ink); border: 1px solid var(--ink); }
+.pub pre {
+  margin: 8px 0 0; padding: 12px 14px; background: var(--soft); border-radius: 6px;
+  font-family: var(--f-mono); font-size: 0.78rem; line-height: 1.5; overflow-x: auto; white-space: pre;
+}
+
+/* Entries (projects, education, experience) */
+.entries { display: grid; gap: 26px; }
+.entry { display: grid; gap: 6px; }
+.entry .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; }
+.entry h3 { font-size: 1.1rem; font-weight: 700; }
+.entry .where { font-style: italic; color: var(--muted); font-size: 0.96rem; }
+.entry ul { margin: 4px 0 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: 0.98rem; }
+.entry ul li::marker { color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tags span { font-family: var(--f-mono); font-size: 0.74rem; background: var(--soft); padding: 2px 8px; border-radius: 3px; }
+
+/* Simple dated list */
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.log li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; }
+.log .d { font-family: var(--f-mono); font-size: 0.85rem; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.log .sub { color: var(--muted); font-size: 0.95rem; }
+
+.skills { display: grid; gap: 8px; margin: 0; }
+.skills div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; font-size: 0.98rem; }
+.skills dt { font-family: var(--f-mono); font-size: 0.82rem; color: var(--muted); padding-top: 3px; }
+.skills dd { margin: 0; }
+
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mail code { font-family: var(--f-mono); font-size: 1rem; user-select: all; overflow-wrap: anywhere; }
+.mail button {
+  font-family: var(--f-mono); font-size: 0.8rem; color: var(--ink); background: none;
+  border: 1px solid var(--ink); border-radius: 4px; padding: 3px 10px; cursor: pointer;
+}
+.mail button:hover { background: var(--ink); color: var(--bg); }
+
+footer { margin-top: 72px; padding-top: 14px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%);
+  background: var(--ink); color: var(--bg); font-family: var(--f-mono); font-size: 0.8rem; padding: 7px 12px; border-radius: 5px;
+}
+
+@media (max-width: 880px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .photo { max-width: 180px; }
+  section { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
+@media (max-width: 560px) {
+  body { padding-inline: 16px; }
+  .log li, .skills div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  main { gap: 48px; padding-top: 48px; }
+  .bar nav { gap: 4px 16px; font-size: 0.92rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="name" href="#top">Bienvenu Bonou</a>
+    <nav aria-label="Sections">
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+  <div class="hero">
+    <figure class="photo">
+      <!-- Replace this placeholder with: <img src="photo.jpg" alt="Bienvenu Bonou"> -->
+      <img src="Bonou_professional_photo.png" alt="Bienvenu Bonou">
+    </figure>
+    <div class="intro">
+      <h1>Bienvenu Bonou</h1>
+      <p class="role">Machine Learning Researcher · Kigali, Rwanda</p>
+      <p class="say">I build machine learning models that explain their predictions and say how certain they are, with a focus on medical imaging and brain data.</p>
+      <div class="links">
+        <a href="https://github.com/bonoubaeudes" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/bienvenu-bonou/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#contact">Email</a>
+        <a href="#contact">CV on request</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="interests" aria-label="Research interests">
+    <span>AI Safety</span>
+    <span>Mechanistic Interpretability</span>
+    <span>LLMs</span>
+    <span>Neuro-symbolic AI</span>
+    <span>Trustworthy AI</span>
+    <span>Computational Neuroscience (MRI / fMRI / EEG)</span>
+  </p>
+
+  <main>
+    <section aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <div class="body">
+        <p>I am a machine learning researcher and AIMS-H2i Data Science Fellow in AIMS Rwanda, working with Grow Kinesis in partnership with the University of Toronto. I hold a Master's in Applied Mathematics from AIMS Senegal, where I was a Mastercard Foundation Scholar.</p>
+        <p>My research is about trustworthy deep learning: models that can be checked, know when they are unsure, and are efficient enough to deploy.</p>
+      </div>
+    </section>
+
+    <section id="news" aria-labelledby="news-h">
+      <h2 id="news-h">News</h2>
+      <div class="body">
+        <ul class="log">
+          <li><span class="d">Aug 2026</span><span>Our paper on EU-VGRNN for brain tumour classification won <b>2nd Best Paper</b> at the Data Science Africa Workshop.</span></li>
+          <li><span class="d">Jul 2026</span><span>Started as an AIMS-H2i Data Science Fellow in Rwanda, working with Grow Kinesis.</span></li>
+          <li><span class="d">Jul 2026</span><span>Selected as a <b>Research Fellow in Computational Neuroscience</b> at the African Brain Data Network, working on MRI and fMRI.</span></li>
+          <li><span class="d">Jul 2026</span><span>Awarded the Prairie Scholarship, Université Paris Dauphine.</span></li>
+          <li><span class="d">Feb 2026</span><span>Gave an oral presentation at the Max Planck Institute for Intelligent Systems / University of Tübingen.</span></li>
+          <li><span class="d">Apr 2025</span><span>Won the AirAware Hackathon (Imperial College London / AIMS).</span></li>
+        
+        </ul>
+      </div>
+    </section>
+
+    <section id="publications" aria-labelledby="pub-h">
+      <h2 id="pub-h">Publications</h2>
+      <div class="body">
+        <div class="pub">
+          <p class="t">Explainable and Uncertainty-Aware Variational Graph Recurrent Neural Networks for Brain Tumor Classification from MRI</p>
+          <p class="au"><span class="me">Bienvenu Bonou</span>, Aurelle T. Kouanou, Clemence Alla Takam, Oumar Kane. Data Science Africa (DSA) Workshop, 2026.</p>
+          <div class="acts">
+            <span class="badge">2nd Best Paper</span>
+            <span class="badge out">Accepted</span>
+            <button type="button" class="bib-btn" aria-expanded="false" aria-controls="bib-1">BibTeX</button>
+          </div>
+          <pre id="bib-1" hidden>@inproceedings{bonou2026euvgrnn,
+  title     = {Explainable and Uncertainty-Aware Variational Graph Recurrent
+               Neural Networks for Brain Tumor Classification from MRI},
+  author    = {Bonou, Bienvenu and Kouanou, Aurelle T. and
+               Alla Takam, Clemence and Kane, Oumar},
+  booktitle = {Data Science Africa Workshop},
+  year      = {2026}
+}</pre>
         </div>
-    </main>
-</body>
-</html>
+        <div class="pub">
+          <p class="t">Towards Efficient and Self-Explainable Plant Disease Detection: Sparse BagNet under Post-Training Quantization</p>
+          <p class="au"><span class="me">Bienvenu Bonou</span>, Kerol Djoumessi. Preprint, 2026.</p>
+          <div class="acts">
+            <span class="badge out">Preprint</span>
+            <button type="button" class="bib-btn" aria-expanded="false" aria-controls="bib-2">BibTeX</button>
+          </div>
+          <pre id="bib-2" hidden>@misc{bonou2026sparsebagnet,
+  title  = {Towards Efficient and Self-Explainable Plant Disease Detection:
+            Sparse BagNet under Post-Training Quantization},
+  author = {Bonou, Bienvenu and Djoumessi, Kerol},
+  note   = {Preprint},
+  year   = {2026}
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="res-h">
+      <h2 id="res-h">Research</h2>
+      <div class="body entries">
+        <article class="entry">
+          <div class="top"><h3>Explainable brain tumour classification from MRI</h3><span class="label">AIMS Senegal</span></div>
+          <p>A variational graph recurrent network (EU-VGRNN) that classifies four tumour types from MRI, explains its predictions and estimates its own uncertainty. It outperformed GCN, GAT and GraphSAGE baselines.</p>
+        </article>
+        <article class="entry">
+          <div class="top"><h3>Efficient, self-explainable plant disease detection</h3><span class="label">University of Tübingen</span></div>
+          <p>A sparse BagNet that keeps its predictions interpretable while staying accurate after INT8 quantization: 98.40% in FP32 and 91.11% in INT8.</p>
+        </article>
+        <article class="entry">
+          <div class="top"><h3>Robustness of a quantized language model</h3><span class="label">Independent</span></div>
+          <p>A benchmark of reasoning, factual consistency and hallucination for a quantized Qwen3-4B model.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="talks-h">
+      <h2 id="talks-h">Talks</h2>
+      <div class="body">
+        <ul class="log">
+          <li><span class="d">2026</span><span>Explainable and Uncertainty-Aware VGRNN for Brain Tumor Classification from MRI<br><span class="sub">Oral presentation, Max Planck Institute for Intelligent Systems / University of Tübingen · Talk, Data Science Africa Workshop</span></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <div class="body">
+        <div class="mail">
+          <code id="email">bonou.b.a.eudes@aims-senegal.org</code>
+          <button type="button" id="copy-email">Copy</button>
+        </div>
+        <p>Kigali, Rwanda · <a href="https://github.com/bonoubaeudes" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/bienvenu-bonou/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="label">
+    <span>© 2026 Bienvenu Bonou</span>
+    <span>Updated September 2026</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+document.querySelectorAll(".bib-btn").forEach(btn => {
+  const pre = document.getElementById(btn.getAttribute("aria-controls"));
+  btn.addEventListener("click", () => { pre.hidden = !pre.hidden; btn.setAttribute("aria-expanded", String(!pre.hidden)); });
+});
+
+const toast = document.getElementById("toast"); let tt;
+function say(m) { toast.textContent = m; toast.hidden = false; clearTimeout(tt); tt = setTimeout(() => toast.hidden = true, 1600); }
+document.getElementById("copy-email").addEventListener("click", () => {
+  const el = document.getElementById("email");
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(el); const g = getSelection(); g.removeAllRanges(); g.addRange(r); say("Selected. Press Ctrl+C to copy"); };
+  try { navigator.clipboard.writeText(el.textContent).then(() => say("Email copied"), sel); } catch (e) { sel(); }
+});
+</script>
+
+</body></html>
